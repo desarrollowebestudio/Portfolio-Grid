@@ -55,7 +55,8 @@ html {
   --tintPrimario-6:  hsl(45, 89%, 70%);
   --tintPrimario-7:  hsl(45, 90%, 76%);
   --tintPrimario-8:  hsl(45, 86%, 81%);
-  --tintPrimario-9:  hsl(45, 100%, 96%);
+  --tintPrimario-9:  hsl(45, 90%, 88%);
+  --tintPrimario-10: hsl(45, 100%, 96%);
 
   /* Tonos Color Base */
   --shadeBase-1:  hsl(210, 61%, 16%);
@@ -190,17 +191,20 @@ MEDIA QUERIES ESTRUCTURA
 ========================
 */
 
-/* Break Points Media Queries */
-/* A) 0px, B) 580px, C) 760px D) 1000px, E) 1200px */
+/* Break Points: A) 0px, B) 580px, C) 760px D) 1000px, E) 1200px */
 
-/* Rango AD: < 1000px */
-@media (max-width: 1000px) {
-
+/* Rango AB: < 580px */
+@media (max-width: 579px) {
+  div.area-activa {
+    padding: 0px 2rem;
+  }
 }
 
-/* Rango DZ: > 1000px */
-@media (min-width: 1000px) {
-
+/* Rango CZ: > 580px */
+@media (min-width: 580px) {
+  div.area-activa {
+    padding: 0px 3rem;
+  }
 }
 
 /* 
@@ -221,5 +225,81 @@ nav#barra-navegacion figure.logo-navegacion {
 
 nav#barra-navegacion figure.logo-navegacion img {
   height: 100%;
+}
+
+nav#barra-navegacion header {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: space-between;
+  align-items: center;
+}
+
+button#boton-navegacion {
+  background-color: transparent;
+  border: none;
+  font-size: 2.4rem;
+  color: var(--colorPrimario);
+  cursor: pointer;
+}
+
+nav#barra-navegacion div.enlaces-navegacion ul {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(4, max-content);
+  align-content: center;
+  justify-content: end;
+  column-gap: 3rem;
+}
+
+nav#barra-navegacion div.enlaces-navegacion ul a {
+  color: var(--shadeBase-1);
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: var(--transicionGeneral);
+  transition-property: color;
+}
+
+nav#barra-navegacion div.enlaces-navegacion ul li:hover a {
+  color: var(--colorPrimario);
+}
+
+/* 
+==============================
+MEDIA QUERIES BARRA NAVEGACIÓN
+==============================
+*/
+
+/* Break Points: A) 0px, B) 580px, C) 760px D) 1000px, E) 1200px */
+
+/* Rango AC: < 760px */
+@media (max-width: 759px) {
+  nav#barra-navegacion {
+    background-color: white;
+  }
+  nav#barra-navegacion div.enlaces-navegacion {
+    display: none;
+  }
+  button#boton-navegacion {
+    display: inline-block;
+  }
+}
+
+/* Rango CZ: > 760px */
+@media (min-width: 760px) {
+  nav#barra-navegacion {
+    background-color: var(--tintPrimario-10);
+  }
+  nav#barra-navegacion div.enlaces-navegacion {
+    display: block;
+  }
+  button#boton-navegacion {
+    display: none;
+  }
+  nav#barra-navegacion div.area-activa {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+  }
 }
 
