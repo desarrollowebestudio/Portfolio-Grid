@@ -1,0 +1,225 @@
+/*
+============= 
+IMPORTACIONES
+=============
+*/
+
+@import url('../Recursos/FontAwesome/FontAwesome.css');
+@import url('../Recursos/GoogleFonts/GoogleFonts.css');
+
+/*
+============= 
+RESET ESTILOS
+=============
+*/
+
+*,
+::after,
+::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/*
+========= 
+VARIABLES
+=========
+*/
+
+html {
+
+  /* Tonos Color Primario */
+  --shadePrimario-1: hsl(45, 86%, 17%);
+  --shadePrimario-2: hsl(45, 77%, 27%);
+  --shadePrimario-3: hsl(45, 72%, 37%);
+  --shadePrimario-4: hsl(45, 63%, 48%);
+  --colorPrimario:   hsl(45, 78%, 60%);
+  --tintPrimario-6:  hsl(45, 89%, 70%);
+  --tintPrimario-7:  hsl(45, 90%, 76%);
+  --tintPrimario-8:  hsl(45, 86%, 81%);
+  --tintPrimario-9:  hsl(45, 100%, 96%);
+
+  /* Tonos Color Base */
+  --shadeBase-1:  hsl(210, 61%, 16%);
+  --shadeBase-2:  hsl(210, 39%, 23%);
+  --shadeBase-3:  hsl(210, 34%, 30%);
+  --shadeBase-4:  hsl(210, 28%, 39%);
+  --colorBase:    hsl(210, 22%, 49%);
+  --tintBase-6:   hsl(210, 23%, 60%);
+  --tintBase-7:   hsl(210, 27%, 70%);
+  --tintBase-8:   hsl(210, 31%, 80%);
+  --tintBase-9:   hsl(210, 33%, 89%);
+  --tintBase-10:  hsl(210, 36%, 96%);
+
+  /* Fuentes */
+  --fuentePrimaria: 'Roboto', sans-serif;
+  --fuenteSecundaria: 'Open Sans', sans-serif;
+
+  /* Distancias */
+  --radioRedondeo: 8px;
+  --anchoAreaActiva: 1200px;
+
+  /* Otros */
+  --transicionGeneral: all 300ms linear;
+  --sombraLigera: 0 5px 15px hsla(0, 0%, 0%, 10%);
+  --sombraFuerte: 0 5px 15px hsla(0, 0%, 0%, 20%);
+}
+
+/*
+=================
+ESTILOS GENERALES
+=================
+*/
+
+body {
+  font-family: var(--fuenteSecundaria);
+  background: white;
+  color: var(--shadeBase-1);
+  font-size: 1.4rem;
+}
+
+p {
+  line-height: 1.4em;
+  color: var(--colorBase);
+}
+
+p:not(:first-of-type) {
+  margin-top: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  margin-bottom: 1.2rem;
+  font-family: var(--fuentePrimaria);
+}
+
+.boton {
+  display: inline-block;
+  border-radius: var(--radioRedondeo);
+  background-color: var(--colorPrimario);
+  border: 2px solid transparent;
+  padding: 0.75rem 1.25rem;
+  font-size: 1.4rem;  
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--shadePrimario-1);
+  box-shadow: 0 2px 4px hsla(0, 0%, 0%, 20%);
+  cursor: pointer;
+  transition: var(--transicionGeneral);
+  transition-property: background-color, color;
+}
+
+.boton:hover {
+  background-color: var(--tintPrimario-7);
+  color: var(--shadePrimario-1);
+}
+
+/* 
+===============================
+MEDIA QUERIES ESTILOS GENERALES
+===============================
+*/
+
+/* Break Points Media Queries */
+/* A) 0px, B) 580px, C) 760px D) 1000px, E) 1200px */
+
+/* Rango AC: < 760px */
+@media (max-width: 759px) {
+
+  h1, h2, h3, h4 {
+    line-height: 1.2em;
+  }
+
+  h1 { font-size: 4.8rem; }
+  h2 { font-size: 3.2rem; }
+  h3 { font-size: 2rem; }
+  h4 { font-size: 1.4rem; }
+
+}
+
+/* Rango CZ: > 760px */
+@media (min-width: 760px) {
+
+  h1, h2, h3, h4 {
+    line-height: 1em;
+  }
+
+  h1 { font-size: 6rem; }
+  h2 { font-size: 4rem; }
+  h3 { font-size: 2.8rem; }
+  h4 { font-size: 1.6rem; }
+
+}
+
+/* 
+==========
+ESTRUCTURA
+==========
+*/
+
+div.area-activa {
+  box-sizing: content-box;
+  max-width: var(--anchoAreaActiva);
+  margin: 0px auto;
+}
+
+/* 
+========================
+MEDIA QUERIES ESTRUCTURA
+========================
+*/
+
+/* Break Points Media Queries */
+/* A) 0px, B) 580px, C) 760px D) 1000px, E) 1200px */
+
+/* Rango AD: < 1000px */
+@media (max-width: 1000px) {
+
+}
+
+/* Rango DZ: > 1000px */
+@media (min-width: 1000px) {
+
+}
+
+/* 
+===================
+BARRA DE NAVEGACIÓN
+===================
+*/
+
+nav#barra-navegacion {
+  padding: 1.5rem 0px;
+}
+
+nav#barra-navegacion figure.logo-navegacion {
+  display: inline-block;
+  width: auto;
+  height: 40px;
+}
+
+nav#barra-navegacion figure.logo-navegacion img {
+  height: 100%;
+}
+
