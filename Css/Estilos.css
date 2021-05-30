@@ -213,21 +213,21 @@ BARRA DE NAVEGACIÓN
 ===================
 */
 
-nav#barra-navegacion {
+section#barra-navegacion {
   padding: 1.5rem 0px;
 }
 
-nav#barra-navegacion figure.logo-navegacion {
+section#barra-navegacion figure.logo-navegacion {
   display: inline-block;
   width: auto;
-  height: 40px;
+  height: 28px;
 }
 
-nav#barra-navegacion figure.logo-navegacion img {
+section#barra-navegacion figure.logo-navegacion img {
   height: 100%;
 }
 
-nav#barra-navegacion header {
+section#barra-navegacion header {
   display: grid;
   grid-template-columns: repeat(2, max-content);
   justify-content: space-between;
@@ -242,7 +242,7 @@ button#boton-navegacion {
   cursor: pointer;
 }
 
-nav#barra-navegacion div.enlaces-navegacion ul {
+section#barra-navegacion nav.enlaces-navegacion ul {
   display: grid;
   height: 100%;
   grid-template-columns: repeat(4, max-content);
@@ -251,7 +251,7 @@ nav#barra-navegacion div.enlaces-navegacion ul {
   column-gap: 3rem;
 }
 
-nav#barra-navegacion div.enlaces-navegacion ul a {
+section#barra-navegacion nav.enlaces-navegacion ul a {
   color: var(--shadeBase-1);
   font-size: 1.3rem;
   font-weight: bold;
@@ -261,7 +261,7 @@ nav#barra-navegacion div.enlaces-navegacion ul a {
   transition-property: color;
 }
 
-nav#barra-navegacion div.enlaces-navegacion ul li:hover a {
+section#barra-navegacion nav.enlaces-navegacion ul li:hover a {
   color: var(--colorPrimario);
 }
 
@@ -275,10 +275,10 @@ MEDIA QUERIES BARRA NAVEGACIÓN
 
 /* Rango AC: < 760px */
 @media (max-width: 759px) {
-  nav#barra-navegacion {
+  section#barra-navegacion {
     background-color: white;
   }
-  nav#barra-navegacion div.enlaces-navegacion {
+  section#barra-navegacion nav.enlaces-navegacion {
     display: none;
   }
   button#boton-navegacion {
@@ -288,18 +288,17 @@ MEDIA QUERIES BARRA NAVEGACIÓN
 
 /* Rango CZ: > 760px */
 @media (min-width: 760px) {
-  nav#barra-navegacion {
+  section#barra-navegacion {
     background-color: var(--tintPrimario-10);
   }
-  nav#barra-navegacion div.enlaces-navegacion {
+  section#barra-navegacion nav.enlaces-navegacion {
     display: block;
   }
   button#boton-navegacion {
     display: none;
   }
-  nav#barra-navegacion div.area-activa {
+  section#barra-navegacion div.area-activa {
     display: grid;
     grid-template-columns: max-content 1fr;
   }
 }
-
