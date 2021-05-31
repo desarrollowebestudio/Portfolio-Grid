@@ -12,3 +12,9 @@ botonMenuNavegacion.addEventListener('click', function () {
 botonCerrarNavegacion.addEventListener('click', function () {
   navegacionLateral.classList.remove('visible');
 });
+
+// Posicionamiento Barra Navegación
+window.addEventListener('scroll', function () {
+  if (window.pageYOffset > 60) { barraNavegacion.classList.add('fija'); } 
+  else { barraNavegacion.classList.remove('fija'); }
+});

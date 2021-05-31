@@ -83,8 +83,8 @@ html {
 
   /* Otros */
   --transicionGeneral: all 300ms linear;
-  --sombraLigera: 0 5px 15px hsla(0, 0%, 0%, 10%);
-  --sombraFuerte: 0 5px 15px hsla(0, 0%, 0%, 20%);
+  --sombraLigera: 0px 5px 15px hsla(0, 0%, 0%, 10%);
+  --sombraFuerte: 0px 5px 15px hsla(0, 0%, 0%, 20%);
 }
 
 /*
@@ -228,7 +228,20 @@ BARRA DE NAVEGACIÓN
 */
 
 section#barra-navegacion {
+  position: sticky;
+  width: 100%;
+  min-height: 6rem;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
   padding: 1.5rem 0px;
+  transition: var(--transicionGeneral);
+  transition-property: background-color, box-shadow;
+}
+
+section#barra-navegacion.fija {
+  background-color: white;
+  box-shadow: var(--sombraLigera); 
 }
 
 section#barra-navegacion figure.logo-navegacion {
@@ -401,3 +414,15 @@ aside#navegacion-lateral div.enlaces-redes-sociales i.fab {
   transition: var(--colorPrimario);
   font-size: 2rem;
 }
+
+/* 
+=============
+SECCIÓN: HERO
+=============
+*/
+
+section#seccion-hero {
+  min-height: 150vh;
+  background-color: var(--colorBase);
+}
+
