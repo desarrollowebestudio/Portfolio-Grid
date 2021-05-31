@@ -70,6 +70,9 @@ html {
   --tintBase-9:   hsl(210, 33%, 89%);
   --tintBase-10:  hsl(210, 36%, 96%);
 
+  /* Color Peligro */
+  --colorPeligro: hsl(0, 65%, 65%);
+
   /* Fuentes */
   --fuentePrimaria: 'Roboto', sans-serif;
   --fuenteSecundaria: 'Open Sans', sans-serif;
@@ -134,6 +137,17 @@ h4 {
 .boton:hover {
   background-color: var(--tintPrimario-7);
   color: var(--shadePrimario-1);
+}
+
+div.enlaces-redes-sociales ul {
+  display: grid;
+  grid-template-columns: repeat(5, max-content);
+  justify-content: space-between;
+}
+
+div.enlaces-redes-sociales a {
+  transition: var(--transicionGeneral);
+  transition-property: color;
 }
 
 /* 
@@ -301,4 +315,83 @@ MEDIA QUERIES BARRA NAVEGACIÓN
     display: grid;
     grid-template-columns: max-content 1fr;
   }
+}
+
+/* 
+==================
+NAVEGACIÓN LATERAL
+==================
+*/
+
+aside#navegacion-lateral {
+  display: grid;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  background-color: var(--tintBase-10);
+  place-items: center;
+  /* transform: translateX(-100%); */
+}
+
+button#boton-cerrar-navegacion {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background-color: transparent;
+  border: none;
+  font-size: 2.4rem;
+  color: var(--shadeBase-2);
+  cursor: pointer;
+  transition: var(--transicionGeneral);
+  transition-property: color;
+}
+
+button#boton-cerrar-navegacion:hover {
+  color: var(--colorPeligro);
+}
+
+aside#navegacion-lateral nav.enlaces-navegacion ul {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.65rem;
+}
+
+aside#navegacion-lateral nav.enlaces-navegacion li {
+  text-align: center;
+}
+
+aside#navegacion-lateral nav.enlaces-navegacion a {
+  font-size: 2.1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--colorBase);
+  transition: var(--transicionGeneral);
+  transition-property: color;
+}
+
+aside#navegacion-lateral nav.enlaces-navegacion li:hover a {
+  color: var(--colorPrimario);
+}
+
+aside#navegacion-lateral div.enlaces-redes-sociales {
+  margin-top: 5rem;
+}
+
+aside#navegacion-lateral div.enlaces-redes-sociales ul {
+  width: 26rem;
+}
+
+aside#navegacion-lateral div.enlaces-redes-sociales a {
+  color: var(--shadeBase-2);
+}
+
+aside#navegacion-lateral div.enlaces-redes-sociales li:hover a {
+  color: var(--colorPrimario);
+}
+
+aside#navegacion-lateral div.enlaces-redes-sociales i.fab {
+  transition: var(--colorPrimario);
+  font-size: 2.4rem;
 }
