@@ -248,7 +248,7 @@ section#barra-navegacion header {
   align-items: center;
 }
 
-button#boton-navegacion {
+button#boton-menu-navegacion {
   background-color: transparent;
   border: none;
   font-size: 2.4rem;
@@ -295,7 +295,7 @@ MEDIA QUERIES BARRA NAVEGACIÓN
   section#barra-navegacion nav.enlaces-navegacion {
     display: none;
   }
-  button#boton-navegacion {
+  button#boton-menu-navegacion {
     display: inline-block;
   }
 }
@@ -308,7 +308,7 @@ MEDIA QUERIES BARRA NAVEGACIÓN
   section#barra-navegacion nav.enlaces-navegacion {
     display: block;
   }
-  button#boton-navegacion {
+  button#boton-menu-navegacion {
     display: none;
   }
   section#barra-navegacion div.area-activa {
@@ -332,7 +332,13 @@ aside#navegacion-lateral {
   left: 0px;
   background-color: var(--tintBase-10);
   place-items: center;
-  /* transform: translateX(-100%); */
+  transform: translateX(-100%);
+  transition: var(--transicionGeneral);
+  transition-property: transform;
+}
+
+aside#navegacion-lateral.visible {
+  transform: translateX(0px);
 }
 
 button#boton-cerrar-navegacion {
@@ -363,10 +369,10 @@ aside#navegacion-lateral nav.enlaces-navegacion li {
 }
 
 aside#navegacion-lateral nav.enlaces-navegacion a {
-  font-size: 2.1rem;
+  font-size: 2rem;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: var(--colorBase);
+  color: var(--shadeBase-4);
   transition: var(--transicionGeneral);
   transition-property: color;
 }
@@ -380,11 +386,11 @@ aside#navegacion-lateral div.enlaces-redes-sociales {
 }
 
 aside#navegacion-lateral div.enlaces-redes-sociales ul {
-  width: 26rem;
+  width: 22rem;
 }
 
 aside#navegacion-lateral div.enlaces-redes-sociales a {
-  color: var(--shadeBase-2);
+  color: var(--shadeBase-1);
 }
 
 aside#navegacion-lateral div.enlaces-redes-sociales li:hover a {
@@ -393,5 +399,5 @@ aside#navegacion-lateral div.enlaces-redes-sociales li:hover a {
 
 aside#navegacion-lateral div.enlaces-redes-sociales i.fab {
   transition: var(--colorPrimario);
-  font-size: 2.4rem;
+  font-size: 2rem;
 }
