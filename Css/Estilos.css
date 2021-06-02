@@ -36,6 +36,7 @@ a {
 img {
   display: block;
   width: 100%;
+  height: 100%;
 }
 
 /*
@@ -78,7 +79,7 @@ html {
   --fuenteSecundaria: 'Open Sans', sans-serif;
 
   /* Distancias */
-  --radioRedondeo: 5px;
+  --radioRedondeo: 8px;
   --anchoAreaActiva: 1200px;
   --altoBarraNavegacion: 6rem;
 
@@ -121,7 +122,7 @@ h4 {
 
 [class|=boton] {
   display: inline-block;
-  border-radius: var(--radioRedondeo);
+  border-radius: 5px;
   background-color: var(--colorPrimario);
   border: 2px solid transparent;
   padding: 0.75rem 2rem;
@@ -143,7 +144,6 @@ h4 {
 
 div.enlaces-redes-sociales ul {
   display: grid;
-  width: 22rem;
   grid-template-columns: repeat(5, max-content);
   justify-content: space-between;
 }
@@ -186,7 +186,7 @@ MEDIA QUERIES ESTILOS GENERALES
     line-height: 1.2em;
   }
 
-  h1 { font-size: 4.8rem; }
+  h1 { font-size: 4rem; }
   h2 { font-size: 3.2rem; }
   h3 { font-size: 2rem; }
   h4 { font-size: 1.4rem; }
@@ -200,7 +200,7 @@ MEDIA QUERIES ESTILOS GENERALES
     line-height: 1em;
   }
 
-  h1 { font-size: 6rem; }
+  h1 { font-size: 4.8rem; }
   h2 { font-size: 4rem; }
   h3 { font-size: 2.8rem; }
   h4 { font-size: 1.6rem; }
@@ -419,6 +419,11 @@ aside#navegacion-lateral div.enlaces-redes-sociales {
   margin-top: 5rem;
 }
 
+aside#navegacion-lateral div.enlaces-redes-sociales ul {
+  width: 22rem;
+}
+
+
 
 /* 
 =============
@@ -434,35 +439,83 @@ section#seccion-hero {
 section#seccion-hero div.area-activa {
   display: grid;
   min-height: inherit;
-  grid-template-columns: repeat(2, max-content);
-  justify-content: space-around;
   align-items: center;
 }
 
-section#seccion-hero article.informacion-hero div.linea-separacion {
+section#seccion-hero article.sector-informacion-hero div.linea-separacion {
   margin: 0px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-section#seccion-hero article.informacion-hero h1 {
-  margin-bottom: 0.5rem;
+section#seccion-hero article.sector-informacion-hero h1 {
+  margin-bottom: 0.75rem;
 }
 
-section#seccion-hero article.informacion-hero h2 {
+section#seccion-hero article.sector-informacion-hero h2 {
   font-size: 1.6rem;
   font-weight: normal;
   color: var(--shadeBase-3);
 }
 
-section#seccion-hero article.informacion-hero a.boton-hero {
+section#seccion-hero article.sector-informacion-hero a.boton-hero {
   margin-top: 2.5rem;
 }
 
-section#seccion-hero article.informacion-hero div.enlaces-redes-sociales {
+section#seccion-hero article.sector-informacion-hero div.enlaces-redes-sociales {
   margin-top: 2.5rem;
 }
 
-section#seccion-hero article.imagen-hero {
-  display: none;
+section#seccion-hero figure.fotografia-hero {
+  position: relative;
+  max-width: 30rem;
+  max-height: 100%;
 }
 
+section#seccion-hero figure.fotografia-hero img {
+  position: relative;
+  z-index: 1;
+  border-radius: var(--radioRedondeo);
+}
+
+section#seccion-hero figure.fotografia-hero::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 2rem;
+  left: 2rem;
+  border: 4px solid var(--colorPrimario);
+  border-radius: var(--radioRedondeo);
+}
+
+/* 
+===========================
+MEDIA QUERIES SECCIÓN: HERO
+===========================
+*/
+
+/* Break Points: A) 0px, B) 580px, C) 760px D) 1000px, E) 1200px */
+
+/* Rango AD: < 1000px */
+@media (max-width: 999px) {
+  section#seccion-hero div.area-activa {
+    grid-template-columns: max-content;
+    justify-content: center;
+  }
+
+  section#seccion-hero article.sector-imagen-hero {
+    display: none;
+  }
+}
+
+/* Rango DZ: > 1000px */
+@media (min-width: 1000px) {
+  section#seccion-hero div.area-activa {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-around;
+  }
+
+  section#seccion-hero article.sector-imagen-hero {
+    display: block;
+  }
+}
