@@ -90,9 +90,9 @@ html {
 }
 
 /*
-=================
-ESTILOS GENERALES
-=================
+================
+ESTILOS GLOBALES
+================
 */
 
 body {
@@ -142,6 +142,45 @@ h4 {
   color: var(--shadePrimario-1);
 }
 
+/* 
+==============================
+MEDIA QUERIES ESTILOS GLOBALES
+==============================
+*/
+
+/* Break Points Media Queries */
+/* A) 0px, B) 580px, C) 760px D) 1000px, E) 1200px */
+
+/* Rango AC: < 760px */
+@media (max-width: 759px) {
+  h1, h2, h3, h4 {
+    line-height: 1.2em;
+  }
+
+  h1 { font-size: 4rem; }
+  h2 { font-size: 3.2rem; }
+  h3 { font-size: 2rem; }
+  h4 { font-size: 1.4rem; }
+}
+
+/* Rango CZ: > 760px */
+@media (min-width: 760px) {
+  h1, h2, h3, h4 {
+    line-height: 1em;
+  }
+
+  h1 { font-size: 4.8rem; }
+  h2 { font-size: 4rem; }
+  h3 { font-size: 2.8rem; }
+  h4 { font-size: 1.6rem; }
+}
+
+/* 
+=======================
+ELEMENTOS TRANSVERSALES
+======================= 
+*/
+
 div.enlaces-redes-sociales ul {
   display: grid;
   grid-template-columns: repeat(5, max-content);
@@ -168,43 +207,6 @@ div.linea-separacion {
   height: 4px;
   margin: 0px auto;
   background-color: var(--colorPrimario);
-}
-
-/* 
-===============================
-MEDIA QUERIES ESTILOS GENERALES
-===============================
-*/
-
-/* Break Points Media Queries */
-/* A) 0px, B) 580px, C) 760px D) 1000px, E) 1200px */
-
-/* Rango AC: < 760px */
-@media (max-width: 759px) {
-
-  h1, h2, h3, h4 {
-    line-height: 1.2em;
-  }
-
-  h1 { font-size: 4rem; }
-  h2 { font-size: 3.2rem; }
-  h3 { font-size: 2rem; }
-  h4 { font-size: 1.4rem; }
-
-}
-
-/* Rango CZ: > 760px */
-@media (min-width: 760px) {
-
-  h1, h2, h3, h4 {
-    line-height: 1em;
-  }
-
-  h1 { font-size: 4.8rem; }
-  h2 { font-size: 4rem; }
-  h3 { font-size: 2.8rem; }
-  h4 { font-size: 1.6rem; }
-
 }
 
 /* 
@@ -253,7 +255,7 @@ section#barra-navegacion {
   min-height: var(--altoBarraNavegacion);
   top: 0px;
   left: 0px;
-  z-index: 1;
+  z-index: 2;
   padding: 1.5rem 0px;
   transition: var(--transicionGeneral);
   transition-property: background-color, box-shadow;
@@ -363,7 +365,7 @@ aside#navegacion-lateral {
   height: 100vh;
   top: 0px;
   left: 0px;
-  z-index: 2;
+  z-index: 3;
   background-color: var(--tintBase-10);
   place-items: center;
   transform: translateX(-100%);
@@ -442,42 +444,42 @@ section#seccion-hero div.area-activa {
   align-items: center;
 }
 
-section#seccion-hero article.sector-informacion-hero div.linea-separacion {
+section#seccion-hero article.sector-informacion div.linea-separacion {
   margin: 0px;
   margin-bottom: 1rem;
 }
 
-section#seccion-hero article.sector-informacion-hero h1 {
+section#seccion-hero article.sector-informacion h1 {
   margin-bottom: 0.75rem;
 }
 
-section#seccion-hero article.sector-informacion-hero h2 {
+section#seccion-hero article.sector-informacion h2 {
   font-size: 1.6rem;
   font-weight: normal;
   color: var(--shadeBase-3);
 }
 
-section#seccion-hero article.sector-informacion-hero a.boton-hero {
+section#seccion-hero article.sector-informacion a.boton-hero {
   margin-top: 2.5rem;
 }
 
-section#seccion-hero article.sector-informacion-hero div.enlaces-redes-sociales {
+section#seccion-hero article.sector-informacion div.enlaces-redes-sociales {
   margin-top: 2.5rem;
 }
 
-section#seccion-hero figure.fotografia-hero {
+section#seccion-hero figure.fotografia-principal {
   position: relative;
   max-width: 30rem;
   max-height: 100%;
 }
 
-section#seccion-hero figure.fotografia-hero img {
+section#seccion-hero figure.fotografia-principal img {
   position: relative;
   z-index: 1;
   border-radius: var(--radioRedondeo);
 }
 
-section#seccion-hero figure.fotografia-hero::after {
+section#seccion-hero figure.fotografia-principal::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -503,7 +505,7 @@ MEDIA QUERIES SECCIÓN: HERO
     justify-content: center;
   }
 
-  section#seccion-hero article.sector-imagen-hero {
+  section#seccion-hero article.sector-imagen {
     display: none;
   }
 }
@@ -515,7 +517,13 @@ MEDIA QUERIES SECCIÓN: HERO
     justify-content: space-around;
   }
 
-  section#seccion-hero article.sector-imagen-hero {
+  section#seccion-hero article.sector-imagen {
     display: block;
   }
 }
+
+/* 
+==================
+SECCIÓN: ACERCA DE
+==================
+*/
