@@ -131,7 +131,7 @@ h4 {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: var(--shadeBase-2);
-  box-shadow: 0 2px 4px hsla(0, 0%, 0%, 20%);
+  box-shadow: 0 2px 4px hsla(0, 0%, 0%, 10%);
   cursor: pointer;
   transition: var(--transicionGeneral);
   transition-property: background-color, color;
@@ -224,8 +224,8 @@ figure.fotografia-principal::after {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 2rem;
-  left: 2rem;
+  top: 2.5rem;
+  left: 2.5rem;
   border: 4px solid var(--colorPrimario);
   border-radius: var(--radioRedondeo);
 }
@@ -277,7 +277,7 @@ div.area-activa {
 }
 
 main > section {
-  --paddingSeccion: 4rem;
+  --paddingSeccion: 5rem;
   padding: var(--paddingSeccion) 0px; 
 }
 
@@ -380,7 +380,6 @@ MEDIA QUERIES BARRA NAVEGACIÓN
 */
 
 /* Break Points: A) 0px, B) 580px, C) 760px D) 1000px, E) 1200px */
-
 /* Rango AC: < 760px */
 @media (max-width: 759px) {
   section#barra-navegacion {
@@ -535,7 +534,6 @@ MEDIA QUERIES SECCIÓN: HERO
 */
 
 /* Break Points: A) 0px, B) 580px, C) 760px D) 1000px, E) 1200px */
-
 /* Rango AD: < 1000px */
 @media (max-width: 999px) {
   section#seccion-hero div.area-activa {
@@ -566,14 +564,10 @@ SECCIÓN: ACERCA DE
 ==================
 */
 
-section#seccion-acerca {
-  padding: 3rem 0px;
-}
-
 section#seccion-acerca div.area-activa {
   display: grid;
   row-gap: 3rem;
-  column-gap: 2rem;
+  align-items: center;
 }
 
 section#seccion-acerca article.sector-imagen {
@@ -584,8 +578,17 @@ section#seccion-acerca figure.fotografia-principal {
   max-width: 30rem;
 }
 
+section#seccion-acerca figure.fotografia-principal::after {
+  left: auto;
+  right: 2.5rem;
+}
+
 section#seccion-acerca article.sector-informacion h2 {
   text-align: left;
+}
+
+section#seccion-acerca article.sector-informacion p {
+  text-align: justify;
 }
 
 section#seccion-acerca article.sector-informacion div.linea-separacion {
@@ -594,4 +597,30 @@ section#seccion-acerca article.sector-informacion div.linea-separacion {
 
 section#seccion-acerca article.sector-informacion a.boton-acerca {
   margin-top: 2.5rem;
+}
+
+/* 
+================================
+MEDIA QUERIES SECCIÓN: ACERCA DE
+================================
+*/
+
+/* Break Points: A) 0px, B) 580px, C) 760px D) 1000px, E) 1200px */
+/* Rango AD: < 1000px */
+@media (max-width: 999px) {
+  section#seccion-acerca div.area-activa {
+    grid-template-columns: auto;
+    justify-content: normal;
+  }
+}
+
+/* Rango DZ: > 1000px */
+@media (min-width: 1000px) {
+  section#seccion-acerca div.area-activa {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-evenly;
+  }
+  section#seccion-acerca article.sector-informacion p {
+    width: 60ch;
+  }
 }
