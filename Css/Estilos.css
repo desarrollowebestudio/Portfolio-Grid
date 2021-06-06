@@ -129,7 +129,7 @@ h4 {
   font-size: 1.3rem;  
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.1em;
   color: var(--shadeBase-2);
   box-shadow: 0 2px 4px hsla(0, 0%, 0%, 10%);
   cursor: pointer;
@@ -203,6 +203,10 @@ div.enlaces-redes-sociales i.fab {
 header.encabezado-seccion {
   margin-bottom: 3rem;
   text-align: center;
+}
+
+header.encabezado-seccion h2 {
+  letter-spacing: 0.02em;
 }
 
 div.linea-separacion {
@@ -363,7 +367,7 @@ section#barra-navegacion nav.enlaces-navegacion ul a {
   color: var(--shadeBase-1);
   font-size: 1.3rem;
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   transition: var(--transicionGeneral);
   transition-property: color;
@@ -464,7 +468,7 @@ aside#navegacion-lateral nav.enlaces-navegacion li {
 
 aside#navegacion-lateral nav.enlaces-navegacion a {
   font-size: 2rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--shadeBase-4);
   transition: var(--transicionGeneral);
@@ -507,6 +511,7 @@ section#seccion-hero article.sector-informacion div.linea-separacion {
 
 section#seccion-hero article.sector-informacion h1 {
   margin-bottom: 0.75rem;
+  letter-spacing: 0.03em;
 }
 
 section#seccion-hero article.sector-informacion h2 {
@@ -623,4 +628,14 @@ MEDIA QUERIES SECCIÓN: ACERCA DE
   section#seccion-acerca article.sector-informacion p {
     width: 60ch;
   }
+}
+
+/* 
+==================
+SECCIÓN: SERVICIOS
+==================
+*/
+
+section#seccion-servicios {
+  background-color: var(--tintBase-10);
 }
