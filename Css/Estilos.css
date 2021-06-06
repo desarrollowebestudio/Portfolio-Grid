@@ -48,16 +48,16 @@ VARIABLES
 html {
 
   /* Tonos Color Primario */
-  --shadePrimario-1: hsl(45, 85%, 15%);
-  --shadePrimario-2: hsl(45, 75%, 30%);
-  --shadePrimario-3: hsl(45, 70%, 35%);
-  --shadePrimario-4: hsl(45, 65%, 50%);
-  --colorPrimario:   hsl(45, 85%, 65%);
-  --tintPrimario-6:  hsl(45, 90%, 70%);
-  --tintPrimario-7:  hsl(45, 90%, 75%);
-  --tintPrimario-8:  hsl(45, 90%, 80%);
-  --tintPrimario-9:  hsl(45, 90%, 88%);
-  --tintPrimario-10: hsl(45, 100%, 96%);
+  --shadePrimario-1: hsl(40, 85%, 15%);
+  --shadePrimario-2: hsl(40, 75%, 30%);
+  --shadePrimario-3: hsl(40, 70%, 35%);
+  --shadePrimario-4: hsl(40, 65%, 50%);
+  --colorPrimario:   hsl(40, 90%, 60%);
+  --tintPrimario-6:  hsl(40, 90%, 70%);
+  --tintPrimario-7:  hsl(40, 90%, 75%);
+  --tintPrimario-8:  hsl(40, 90%, 80%);
+  --tintPrimario-9:  hsl(40, 90%, 88%);
+  --tintPrimario-10: hsl(40, 100%, 96%);
 
   /* Tonos Color Base */
   --shadeBase-1:  hsl(210, 60%, 15%);
@@ -206,14 +206,18 @@ header.encabezado-seccion {
 }
 
 header.encabezado-seccion h2 {
+  margin-bottom: 0.5rem;
   letter-spacing: 0.02em;
 }
 
 div.linea-separacion {
-  width: 8rem;
-  height: 4px;
   margin: 0px auto;
   background-color: var(--colorPrimario);
+}
+
+header.encabezado-seccion div.linea-separacion {
+  width: 8rem;
+  height: 4px;
 }
 
 figure.fotografia-principal {
@@ -504,6 +508,10 @@ section#seccion-hero div.area-activa {
   align-items: center;
 }
 
+section#seccion-hero header.encabezado-seccion {
+  text-align: left;
+}
+
 section#seccion-hero article.sector-informacion div.linea-separacion {
   margin: 0px;
   margin-bottom: 1rem;
@@ -638,4 +646,51 @@ SECCIÓN: SERVICIOS
 
 section#seccion-servicios {
   background-color: var(--tintBase-10);
+}
+
+section#seccion-servicios div.galeria-servicios {
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 3rem;
+}
+
+section#seccion-servicios article {
+  border-radius: var(--radioRedondeo);
+  background-color: white;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: var(--transicionGeneral);
+  transition-property: background-color;
+}
+section#seccion-servicios header.encabezado-servicio {
+  margin-bottom: 2rem;
+}
+
+section#seccion-servicios header.encabezado-servicio p.icono-servicio {
+  font-size: 3rem;
+  color: var(--shadeBase-1);
+}
+
+section#seccion-servicios header.encabezado-servicio h3.titulo-servicio {
+  margin-bottom: 1rem;
+}
+
+section#seccion-servicios header.encabezado-servicio div.linea-separacion {
+  width: 5rem;
+  height: 2px;
+}
+
+section#seccion-servicios article:hover {
+  background-color: var(--colorPrimario);
+}
+
+section#seccion-servicios :is(p.icono-servicio, h3.titulo-servicio),
+section#seccion-servicios div.cuerpo-servicio p {
+  transition: var(--transicionGeneral);
+  transition-property: color;
+}
+
+section#seccion-servicios article:hover :is(p.icono-servicio, h3.titulo-servicio),
+section#seccion-servicios article:hover div.cuerpo-servicio p {
+  color: white;
 }
