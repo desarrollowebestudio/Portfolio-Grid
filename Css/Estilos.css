@@ -220,6 +220,7 @@ div.linea-separacion {
 header.encabezado-seccion div.linea-separacion {
   width: 8rem;
   height: 4px;
+  margin-top: 1rem;
 }
 
 figure.fotografia-principal {
@@ -668,7 +669,8 @@ section#seccion-servicios header.encabezado-servicio {
 }
 
 section#seccion-servicios header.encabezado-servicio p.icono-servicio {
-  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-size: 2.4rem;
   color: var(--shadeBase-1);
 }
 
