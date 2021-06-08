@@ -284,6 +284,7 @@ ESTRUCTURA
 div.area-activa {
   box-sizing: content-box;
   max-width: var(--anchoAreaActiva);
+  height: 100%;
   margin: 0px auto;
 }
 
@@ -322,7 +323,7 @@ BARRA DE NAVEGACIÓN
 section#barra-navegacion {
   position: sticky;
   width: 100%;
-  min-height: var(--altoBarraNavegacion);
+  height: var(--altoBarraNavegacion);
   top: 0px;
   left: 0px;
   z-index: 2;
@@ -339,7 +340,7 @@ section#barra-navegacion.fija {
 section#barra-navegacion figure.logo-navegacion {
   display: inline-block;
   width: auto;
-  height: 28px;
+  height: 1.8rem;
 }
 
 section#barra-navegacion figure.logo-navegacion img {
@@ -736,7 +737,7 @@ SECCIÓN: PROYECTOS
 */
 
 section#seccion-proyectos div.descripcion-seccion p {
-  max-width: 65ch;
+  max-width: 80ch;
   margin: 0px auto;
   text-align: center;
 }
@@ -744,9 +745,14 @@ section#seccion-proyectos div.descripcion-seccion p {
 section#seccion-proyectos div.galeria-proyectos {
   display: grid;
   margin-top: 5rem;
-  grid-template-columns: auto;
-  gap: 3rem;
+  grid-auto-rows: 240px;
+  gap: 2rem;
 }
+
+section#seccion-proyectos article.proyecto:nth-of-type(1) { grid-area: A; }
+section#seccion-proyectos article.proyecto:nth-of-type(2) { grid-area: B; }
+section#seccion-proyectos article.proyecto:nth-of-type(3) { grid-area: C; }
+section#seccion-proyectos article.proyecto:nth-of-type(4) { grid-area: D; }
 
 section#seccion-proyectos article.proyecto {
   border-radius: var(--radioRedondeo);
@@ -756,10 +762,11 @@ section#seccion-proyectos article.proyecto {
 section#seccion-proyectos article.proyecto > a {
   display: block;
   position: relative;
+  height: 100%;
 }
 
 section#seccion-proyectos article.proyecto figure {
-  max-height: 240px;
+  height: 100%;
 }
 
 section#seccion-proyectos article.proyecto img {
@@ -826,12 +833,52 @@ section#seccion-proyectos article.proyecto div.informacion {
 
 section#seccion-proyectos article.proyecto div.informacion h3 {
   margin-bottom: 0.5rem;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   letter-spacing: 0.035em;
   color: white;
 }
 
 section#seccion-proyectos article.proyecto div.informacion p {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: white;
+}
+
+/* 
+================================
+MEDIA QUERIES SECCIÓN: PROYECTOS
+================================
+*/
+
+/* Break Points: A) 0px, B) 580px, C) 760px D) 1000px, E) 1200px */
+/* Rango AB: < 580px */
+@media (max-width: 579px) {
+  section#seccion-proyectos div.galeria-proyectos {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      'A' 
+      'B' 
+      'C' 
+      'D';
+    column-gap: 3rem;
+  }
+}
+
+/* Rango BC: 580px - 760px */
+@media (min-width: 580px) and (max-width: 759px) {
+  section#seccion-proyectos div.galeria-proyectos {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      'A B'
+      'C D';
+  }
+}
+
+/* Rango BZ: > 760px */
+@media (min-width: 760px) {
+  section#seccion-proyectos div.galeria-proyectos {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      'B A C'
+      'B D D';
+  }
 }
