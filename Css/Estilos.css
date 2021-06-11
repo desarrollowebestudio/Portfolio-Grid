@@ -33,7 +33,7 @@ a {
   text-decoration: none;
 }
 
-img {
+img, video {
   display: block;
   width: 100%;
   height: 100%;
@@ -881,4 +881,25 @@ MEDIA QUERIES SECCIÓN: PROYECTOS
       'B A C'
       'B D D';
   }
+}
+
+/* 
+=================
+SECCIÓN: CONEXIÓN
+=================
+*/
+
+section#seccion-conexion {
+}
+
+section#seccion-conexion div.video-fondo {
+  position: relative;
+  min-height: 50vh;
+}
+
+section#seccion-conexion div.video-fondo video {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  object-fit: cover;
 }
