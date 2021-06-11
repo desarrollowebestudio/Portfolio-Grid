@@ -86,7 +86,7 @@ html {
   /* Otros */
   --transicionGeneral: all 300ms linear;
   --sombraLigera: 0px 5px 15px hsla(0, 0%, 0%, 10%);
-  --sombraFuerte: 0px 5px 15px hsla(0, 0%, 0%, 20%);
+  --sombraFuerte: 0px 5px 15px hsla(0, 0%, 0%, 15%);
 }
 
 /*
@@ -889,6 +889,9 @@ SECCIÓN: CONEXIÓN
 =================
 */
 
+section#seccion-conexion {
+  padding-bottom: 0px;
+}
 
 section#seccion-conexion div.contenido-seccion {
   position: relative;
@@ -898,6 +901,7 @@ section#seccion-conexion div.contenido-seccion {
 
 section#seccion-conexion div.video-fondo {
   position: absolute;
+  width: 100%;
   height: 100%;
   top: 0px;
   left: 0px;
@@ -926,10 +930,15 @@ section#seccion-conexion div.area-activa {
   place-content: center;
 }
 
+section#seccion-conexion div.sombra-banner {
+  filter: drop-shadow(var(--sombraFuerte));
+}
+
 section#seccion-conexion div.banner-informacion {
+  margin: 5rem 0px;
   border-radius: var(--radioRedondeo);
   background-color: var(--tintPrimario-10);
-  padding: 4rem 5rem;
+  padding: 4rem;
   text-align: center;
 }
 
@@ -943,5 +952,48 @@ section#seccion-conexion div.contenido-banner {
 }
 
 section#seccion-conexion div.contenido-banner a.boton {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
+
+/* 
+================================
+MEDIA QUERIES SECCIÓN: CONEXIÓN
+================================
+*/
+
+/* Break Points: A) 0px, B) 580px, C) 760px D) 1000px, E) 1200px */
+/* Rango AB: < 580px */
+@media (max-width: 579px) {
+  section#seccion-conexion div.video-fondo {
+    clip-path: none;
+  }
+  section#seccion-conexion div.banner-informacion {
+    clip-path: none;
+  }
+}
+
+/* Rango BZ: > 580px */
+@media (min-width: 580px) {
+  section#seccion-conexion div.banner-informacion {
+    clip-path: 
+      polygon(0% 0%, 100% 0%, 100% 85%, 90% 85%, 90% 100%, 80% 85%, 0% 85%);
+    padding-bottom: 9rem;
+  }
+}
+
+/* Rango BD: 580px - 1000px */
+@media (min-width: 580px) and (max-width: 999px) {
+  section#seccion-conexion div.video-fondo {
+    clip-path:
+      polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+  }
+}
+
+/* Rango BZ: > 1000px */
+@media (min-width: 1000px) {
+  section#seccion-conexion div.video-fondo {
+    clip-path:
+      polygon(5% 0%, 95% 0%, 100% 10%, 100% 90%, 95% 100%, 5% 100%, 0% 90%, 0% 10%);
+  }
+}
+
