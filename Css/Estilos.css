@@ -116,7 +116,7 @@ h2,
 h3,
 h4 {
   text-transform: capitalize;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
   font-family: var(--fuentePrimaria);
 }
 
@@ -912,7 +912,7 @@ section#seccion-conexion div.video-fondo video {
   object-fit: cover;
 }
 
-section#seccion-conexion div.video-fondo::after {
+section#seccion-conexion div.video-fondo::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -953,6 +953,17 @@ section#seccion-conexion div.contenido-banner {
 
 section#seccion-conexion div.contenido-banner a.boton {
   margin-top: 3rem;
+}
+
+section#seccion-conexion div.contenido-seccion::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+  background-color: var(--tintPrimario-9);
 }
 
 /* 
@@ -997,3 +1008,111 @@ MEDIA QUERIES SECCIÓN: CONEXIÓN
   }
 }
 
+/* 
+====================
+SECCIÓN: HABILIDADES
+====================
+*/
+
+section#seccion-habilidades {
+  background-color: var(--tintPrimario-9);
+}
+
+section#seccion-habilidades div.contenido-seccion {
+  display: grid;
+  gap: 5rem;
+}
+
+section#seccion-habilidades h3.titulo-sector {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--shadePrimario-1);
+}
+
+section#seccion-habilidades div.cuerpo-sector article.habilidad:not(:first-of-type) {
+  margin-top: 1.5rem;
+}
+
+section#seccion-habilidades div.informacion-habilidad {
+  position: relative;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+section#seccion-habilidades div.informacion-habilidad label.titulo-habilidad {
+  color: var(--shadePrimario-1);
+}
+
+section#seccion-habilidades div.informacion-habilidad span.valor-habilidad {
+  position: absolute;
+  transform: translateX(-50%);
+  color: var(--shadePrimario-2);
+}
+
+section#seccion-habilidades span.valor-habilidad[data-valor='10'] { 
+  left: 10%; 
+}
+section#seccion-habilidades span.valor-habilidad[data-valor='20'] { 
+  left: 20%; 
+}
+section#seccion-habilidades span.valor-habilidad[data-valor='30'] { 
+  left: 30%; 
+}
+section#seccion-habilidades span.valor-habilidad[data-valor='40'] { 
+  left: 40%; 
+}
+section#seccion-habilidades span.valor-habilidad[data-valor='50'] { 
+  left: 50%; 
+}
+section#seccion-habilidades span.valor-habilidad[data-valor='60'] { 
+  left: 60%; 
+}
+section#seccion-habilidades span.valor-habilidad[data-valor='70'] { 
+  left: 70%; 
+}
+section#seccion-habilidades span.valor-habilidad[data-valor='80'] { 
+  left: 80%; 
+}
+section#seccion-habilidades span.valor-habilidad[data-valor='90'] { 
+  left: 90%; 
+}
+
+section#seccion-habilidades article.habilidad progress {
+  --alturaBarra: 1.5rem;
+  display: block;
+  appearance: none;
+  width: 100%;
+  height: var(--alturaBarra);
+  border-radius: var(--alturaBarra);
+  overflow: hidden;
+  border: none;
+  background-color: white;
+}
+
+section#seccion-habilidades article.habilidad progress::-moz-progress-bar,
+section#seccion-habilidades article.habilidad progress::-webkit-progress-value {
+  background-color: var(--colorPrimario);
+}
+
+/* 
+==================================
+MEDIA QUERIES SECCIÓN: HABILIDADES
+==================================
+*/
+
+/* Break Points: A) 0px, B) 580px, C) 760px D) 1000px, E) 1200px */
+/* Rango AC: < 760px */
+@media (max-width: 759px) {
+  section#seccion-habilidades div.contenido-seccion {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Rango CZ: > 760px */
+@media (min-width: 760px) {
+  section#seccion-habilidades div.contenido-seccion {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
