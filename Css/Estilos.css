@@ -73,6 +73,7 @@ html {
 
   /* Color Peligro */
   --colorPeligro: hsl(0, 65%, 65%);
+  --colorFondoOscuro: hsl(0, 0%, 12%);
 
   /* Fuentes */
   --fuentePrimaria: 'Roboto', sans-serif;
@@ -198,7 +199,7 @@ div.enlaces-redes-sociales li:hover a {
 }
 
 div.enlaces-redes-sociales i.fab {
-  transition: var(--colorPrimario);
+  transition: color;
   font-size: 2rem;
 }
 
@@ -1125,8 +1126,10 @@ SECCIÓN: LÍNEA TIEMPO
 
 section#seccion-linea-tiempo div.contenedor-linea-tiempo {
   --numeroEventos: 6;
-  width: max-content;
+  width: 100%;
+  max-width: max-content;
   margin: 0px auto;
+  padding: 0px 2rem;
   counter-reset: numero-evento calc(var(--numeroEventos) + 1);
 }
 
@@ -1137,7 +1140,7 @@ section#seccion-linea-tiempo article.evento {
   max-width: 65ch;
   border: 2px hidden var(--colorPrimario);
   border-top-style: var(--estiloBorde);
-  padding: 5rem 4rem;
+  padding: 5rem 0px;
 }
 
 section#seccion-linea-tiempo article.evento:nth-of-type(odd) {
@@ -1145,13 +1148,17 @@ section#seccion-linea-tiempo article.evento:nth-of-type(odd) {
   border-right-style: var(--estiloBorde);
   border-top-right-radius: var(--radioLinea);
   border-bottom-right-radius: var(--radioLinea);
+  padding-right: 4rem;
   text-align: right;
 }
 
 section#seccion-linea-tiempo article.evento:nth-of-type(even) {
+  margin-right: var(--radioLinea);
   border-left-style: var(--estiloBorde);
   border-top-left-radius: var(--radioLinea);
   border-bottom-left-radius: var(--radioLinea);
+  padding-left: 4rem;
+  text-align: left;
 }
 
 section#seccion-linea-tiempo article.evento:first-of-type {
@@ -1199,4 +1206,42 @@ section#seccion-linea-tiempo span.numero-evento::before {
   display: inline-block;
   counter-increment: numero-evento -1;
   content: counter(numero-evento);
+}
+
+
+/* 
+======
+FOOTER
+======
+*/
+
+footer#footer-sitio {
+  background-color: var(--colorFondoOscuro);
+  padding: 4rem 0px;
+}
+
+footer#footer-sitio div.enlaces-redes-sociales {
+  margin-bottom: 1.5rem;
+}
+
+footer#footer-sitio div.enlaces-redes-sociales ul {
+  width: 20rem;
+  margin: 0px auto;
+}
+
+footer#footer-sitio div.enlaces-redes-sociales a {
+  color: var(--tintPrimario-6);
+}
+
+footer#footer-sitio div.enlaces-redes-sociales i.fab {
+  font-size: 2rem;
+}
+
+footer#footer-sitio div.enlaces-redes-sociales li:hover a {
+  color: white;
+}
+
+footer#footer-sitio p.informacion-secundaria {
+  text-transform: capitalize;
+  text-align: center;
 }
