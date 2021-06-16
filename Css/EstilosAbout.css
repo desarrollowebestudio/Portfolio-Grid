@@ -28,3 +28,42 @@ section#seccion-acerca {
   min-height: calc(100vh - var(--alturaBarraNavegacion) - var(--alturaFooter));
   background-color: var(--tintPrimario-10);
 }
+
+section#seccion-acerca div.informacion-acerca {
+  max-width: max-content;
+  margin: 0px auto;
+  margin-top: 4rem;
+}
+
+section#seccion-acerca div.informacion-acerca :is(p, li) {
+  font-size: 1.4rem;
+  color: var(--colorBase);
+}
+
+section#seccion-acerca div.informacion-acerca ul.lista-caracteristicas {
+  padding-left: 3rem;
+  list-style-type: disc;
+  margin-top: 2.5rem;
+}
+
+section#seccion-acerca div.informacion-acerca li {
+  padding-left: 0.25rem;
+}
+
+section#seccion-acerca div.informacion-acerca li::marker {
+  color: var(--colorPrimario);
+}
+
+section#seccion-acerca div.informacion-acerca li:not(:first-of-type)  {
+  margin-top: 0.75rem;
+}
+
+section#seccion-acerca div.informacion-acerca a {
+  color: var(--shadePrimario-4);
+  transition: var(--transicionGeneral);
+  transition-property: color;
+}
+
+section#seccion-acerca div.informacion-acerca a:hover {
+  color: var(--shadePrimario-3);
+}

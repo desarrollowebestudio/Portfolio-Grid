@@ -28,3 +28,38 @@ section#seccion-contacto {
   min-height: calc(100vh - var(--alturaBarraNavegacion) - var(--alturaFooter));
   background-color: var(--tintPrimario-10);
 }
+
+section#seccion-contacto div.informacion-contacto {
+  max-width: max-content;
+  margin: 0px auto;
+  margin-top: 4rem;
+}
+
+section#seccion-contacto div.informacion-contacto ul {
+  padding-left: 3rem;
+  list-style-type: disc;
+}
+
+section#seccion-contacto div.informacion-contacto li {
+  padding-left: 0.25rem;
+  font-size: 1.4rem;
+  color: var(--colorBase);
+}
+
+section#seccion-contacto div.informacion-contacto li::marker {
+  color: var(--colorPrimario);
+}
+
+section#seccion-contacto div.informacion-contacto li:not(:first-of-type)  {
+  margin-top: 0.75rem;
+}
+
+section#seccion-contacto div.informacion-contacto a {
+  color: var(--shadePrimario-4);
+  transition: var(--transicionGeneral);
+  transition-property: color;
+}
+
+section#seccion-contacto div.informacion-contacto a:hover {
+  color: var(--shadePrimario-3);
+}
