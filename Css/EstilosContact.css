@@ -1,0 +1,30 @@
+/* 
+=============
+IMPORTACIONES
+=============
+*/
+
+@import url('EstilosBase.css');
+
+/* 
+=================
+ESTILOS GENERALES
+================= 
+*/
+
+header.encabezado-seccion h1 {
+  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  letter-spacing: 0.025em;
+}
+
+/* 
+=================
+SECCIÓN: CONTACTO
+=================
+*/
+
+section#seccion-contacto {
+  min-height: calc(100vh - var(--alturaBarraNavegacion) - var(--alturaFooter));
+  background-color: var(--tintPrimario-10);
+}
