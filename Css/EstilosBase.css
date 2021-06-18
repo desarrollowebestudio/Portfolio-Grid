@@ -49,7 +49,7 @@ html {
 
   /* Tonos Color Primario */
   --shadePrimario-1: hsl(40, 85%, 15%);
-  --shadePrimario-2: hsl(40, 75%, 30%);
+  --shadePrimario-2: hsl(40, 75%, 25%);
   --shadePrimario-3: hsl(40, 70%, 35%);
   --shadePrimario-4: hsl(40, 65%, 50%);
   --colorPrimario:   hsl(40, 90%, 60%);
@@ -60,8 +60,8 @@ html {
   --tintPrimario-10: hsl(40, 100%, 96%);
 
   /* Tonos Color Base */
-  --shadeBase-1:  hsl(210, 60%, 15%);
-  --shadeBase-2:  hsl(210, 40%, 25%);
+  --shadeBase-1:  hsl(210, 15%, 25%);
+  --shadeBase-2:  hsl(210, 25%, 25%);
   --shadeBase-3:  hsl(210, 35%, 30%);
   --shadeBase-4:  hsl(210, 30%, 40%);
   --colorBase:    hsl(210, 20%, 50%);
@@ -73,7 +73,8 @@ html {
 
   /* Color Peligro */
   --colorPeligro: hsl(0, 65%, 65%);
-  --colorFondoOscuro: hsl(0, 0%, 12%);
+  --colorFondoOscuro-1: hsl(0, 0%, 10%);
+  --colorFondoOscuro-2: hsl(0, 0%, 20%);
 
   /* Fuentes */
   --fuentePrimaria: 'Roboto', sans-serif;
@@ -83,7 +84,7 @@ html {
   --radioRedondeo: 8px;
   --anchoAreaActiva: 1200px;
   --alturaBarraNavegacion: 6rem;
-  --alturaFooter: 10rem;
+  --alturaFooter: 12rem;
 
   /* Otros */
   --transicionGeneral: all 300ms linear;
@@ -185,6 +186,7 @@ ELEMENTOS TRANSVERSALES
 
 div.enlaces-redes-sociales ul {
   display: grid;
+  grid-template-columns: repeat(5, -webkit-max-content);
   grid-template-columns: repeat(5, max-content);
   justify-content: space-between;
 }
@@ -271,6 +273,7 @@ BARRA DE NAVEGACIÓN
 */
 
 section#barra-navegacion {
+  position: -webkit-sticky;
   position: sticky;
   width: 100%;
   height: var(--alturaBarraNavegacion);
@@ -299,6 +302,7 @@ section#barra-navegacion figure.logo-navegacion img {
 
 section#barra-navegacion header {
   display: grid;
+  grid-template-columns: repeat(2, -webkit-max-content);
   grid-template-columns: repeat(2, max-content);
   justify-content: space-between;
   align-items: center;
@@ -315,6 +319,7 @@ button#boton-menu-navegacion {
 section#barra-navegacion nav.enlaces-navegacion ul {
   display: grid;
   height: 100%;
+  grid-template-columns: repeat(4, -webkit-max-content);
   grid-template-columns: repeat(4, max-content);
   align-content: center;
   justify-content: end;
@@ -368,6 +373,7 @@ MEDIA QUERIES BARRA NAVEGACIÓN
   }
   section#barra-navegacion div.area-activa {
     display: grid;
+    grid-template-columns: -webkit-max-content 1fr;
     grid-template-columns: max-content 1fr;
   }
 }
@@ -453,7 +459,7 @@ FOOTER
 
 footer#footer-sitio {
   height: var(--alturaFooter);
-  background-color: var(--colorFondoOscuro);
+  background-color: var(--colorFondoOscuro-1);
 }
 
 footer#footer-sitio div.area-activa {

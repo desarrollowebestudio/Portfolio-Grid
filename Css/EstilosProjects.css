@@ -1,0 +1,145 @@
+/* 
+=============
+IMPORTACIONES
+=============
+*/
+
+@import url('EstilosBase.css');
+
+/* 
+=================
+ESTILOS GENERALES
+================= 
+*/
+
+header.encabezado-seccion h1 {
+  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  letter-spacing: 0.025em;
+}
+
+/* 
+==================
+SECCIÓN: PROYECTOS
+==================
+*/
+
+section#seccion-proyectos {
+  min-height: calc(100vh - var(--alturaBarraNavegacion) - var(--alturaFooter));
+  padding: 0px;
+}
+
+section#seccion-proyectos header.encabezado-seccion {
+  margin-bottom: 0px;
+  background-color: var(--tintPrimario-10);
+  padding: 3rem 0px;
+}
+
+section#seccion-proyectos div.galeria-proyectos {
+  padding: var(--paddingSeccion) 0px;
+}
+
+section#seccion-proyectos div.galeria-proyectos div.area-activa {
+  --anchoTarjeta: 280px;
+  display: grid;
+  gap: 3rem 2rem;
+  justify-items: center;
+}
+
+section#seccion-proyectos article.tarjeta-proyecto {
+  max-width: calc(var(--anchoTarjeta) + 120px);
+  border-radius: var(--radioRedondeo);
+  overflow: hidden;
+  box-shadow: var(--sombraLigera);
+}
+
+section#seccion-proyectos article.tarjeta-proyecto figure.imagen-tarjeta {
+  aspect-ratio: 16 / 9;
+}
+
+section#seccion-proyectos article.tarjeta-proyecto div.cuerpo-tarjeta {
+  position: relative;
+  background-color: var(--tintBase-10);
+  padding: 3.5rem 2.5rem;
+}
+
+section#seccion-proyectos article.tarjeta-proyecto a.icono-flotante {
+  --diametroIcono: 5rem;
+  display: grid;
+  position: absolute;
+  width: var(--diametroIcono);
+  height: var(--diametroIcono);
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: var(--diametroIcono);
+  border: 5px solid var(--tintBase-10);
+  background-color: var(--colorPrimario);
+  place-items: center;
+  font-size: 2rem;
+  color: var(--shadePrimario-2);
+  transition: var(--transicionGeneral);
+  transition-property: transform, background-color; 
+}
+
+section#seccion-proyectos article.tarjeta-proyecto a.icono-flotante:hover {
+  transform: translate(-50%, -55%);
+  background-color: var(--tintPrimario-7);
+}
+
+section#seccion-proyectos article.tarjeta-proyecto div.informacion-proyecto h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+section#seccion-proyectos article.tarjeta-proyecto div.informacion-proyecto p {
+  font-size: 1.3rem;
+}
+
+section#seccion-proyectos article.tarjeta-proyecto footer.footer-tarjeta {
+  display: grid;
+  grid-template-columns: repeat(2, -webkit-max-content);
+  grid-template-columns: repeat(2, max-content);
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2.5rem;
+  background-color: var(--shadeBase-1);
+}
+
+section#seccion-proyectos article.tarjeta-proyecto footer.footer-tarjeta span.icono-github {
+  font-size: 2rem;
+  color: var(--tintPrimario-7);
+}
+
+section#seccion-proyectos article.tarjeta-proyecto footer.footer-tarjeta span.enlace-github a {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--tintPrimario-7);
+  transition: var(--transicionGeneral);
+  transition-property: color;
+}
+
+section#seccion-proyectos article.tarjeta-proyecto footer.footer-tarjeta span.enlace-github:hover a {
+  color: var(--tintPrimario-10);
+}
+
+/*
+================================
+MEDIA QUERIES: SECCIÓN PROYECTOS
+================================
+*/
+
+/* Break Points Especiales: A) 0px, B) 400px
+/* Rango AB: < 400px */
+@media (max-width: 399px) {
+  section#seccion-proyectos div.galeria-proyectos div.area-activa {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Rango BZ: > 400px */
+@media (min-width: 400px) {
+  section#seccion-proyectos div.galeria-proyectos div.area-activa {
+    grid-template-columns: repeat(auto-fill, minmax(var(--anchoTarjeta), 1fr));
+  }
+}

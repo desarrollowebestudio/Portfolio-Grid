@@ -30,6 +30,8 @@ section#seccion-acerca {
 }
 
 section#seccion-acerca div.informacion-acerca {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
   max-width: max-content;
   margin: 0px auto;
   margin-top: 4rem;

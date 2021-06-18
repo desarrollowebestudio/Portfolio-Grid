@@ -123,6 +123,7 @@ MEDIA QUERIES SECCIÓN: HERO
 /* Rango AD: < 1000px */
 @media (max-width: 999px) {
   section#seccion-hero div.area-activa {
+    grid-template-columns: -webkit-max-content;
     grid-template-columns: max-content;
     justify-content: center;
   }
@@ -135,6 +136,7 @@ MEDIA QUERIES SECCIÓN: HERO
 /* Rango DZ: > 1000px */
 @media (min-width: 1000px) {
   section#seccion-hero div.area-activa {
+    grid-template-columns: repeat(2, -webkit-max-content);
     grid-template-columns: repeat(2, max-content);
     justify-content: space-around;
   }
@@ -203,6 +205,7 @@ MEDIA QUERIES SECCIÓN: ACERCA DE
 /* Rango DZ: > 1000px */
 @media (min-width: 1000px) {
   section#seccion-acerca div.area-activa {
+    grid-template-columns: repeat(2, -webkit-max-content);
     grid-template-columns: repeat(2, max-content);
     justify-content: space-evenly;
   }
@@ -432,7 +435,8 @@ MEDIA QUERIES SECCIÓN: PROYECTOS
       'B' 
       'C' 
       'D';
-    column-gap: 3rem;
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
   }
 }
 
@@ -505,13 +509,14 @@ section#seccion-conexion div.area-activa {
 }
 
 section#seccion-conexion div.sombra-banner {
+  -webkit-filter: drop-shadow(var(--sombraFuerte));
   filter: drop-shadow(var(--sombraFuerte));
 }
 
 section#seccion-conexion div.banner-informacion {
   margin: 5rem 0px;
   border-radius: var(--radioRedondeo);
-  background-color: var(--tintPrimario-10);
+  background-color: white;
   padding: 4rem;
   text-align: center;
 }
@@ -550,9 +555,11 @@ MEDIA QUERIES SECCIÓN: CONEXIÓN
 /* Rango AB: < 580px */
 @media (max-width: 579px) {
   section#seccion-conexion div.video-fondo {
+    -webkit-clip-path: none;
     clip-path: none;
   }
   section#seccion-conexion div.banner-informacion {
+    -webkit-clip-path: none;
     clip-path: none;
   }
 }
@@ -560,6 +567,8 @@ MEDIA QUERIES SECCIÓN: CONEXIÓN
 /* Rango BZ: > 580px */
 @media (min-width: 580px) {
   section#seccion-conexion div.banner-informacion {
+    -webkit-clip-path: 
+      polygon(0% 0%, 100% 0%, 100% 85%, 90% 85%, 90% 100%, 80% 85%, 0% 85%);
     clip-path: 
       polygon(0% 0%, 100% 0%, 100% 85%, 90% 85%, 90% 100%, 80% 85%, 0% 85%);
     padding-bottom: 9rem;
@@ -569,6 +578,8 @@ MEDIA QUERIES SECCIÓN: CONEXIÓN
 /* Rango BD: 580px - 1000px */
 @media (min-width: 580px) and (max-width: 999px) {
   section#seccion-conexion div.video-fondo {
+    -webkit-clip-path:
+      polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
     clip-path:
       polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
   }
@@ -577,6 +588,8 @@ MEDIA QUERIES SECCIÓN: CONEXIÓN
 /* Rango BZ: > 1000px */
 @media (min-width: 1000px) {
   section#seccion-conexion div.video-fondo {
+    -webkit-clip-path:
+      polygon(5% 0%, 95% 0%, 100% 10%, 100% 90%, 95% 100%, 5% 100%, 0% 90%, 0% 10%);
     clip-path:
       polygon(5% 0%, 95% 0%, 100% 10%, 100% 90%, 95% 100%, 5% 100%, 0% 90%, 0% 10%);
   }
@@ -656,6 +669,8 @@ section#seccion-habilidades span.valor-habilidad[data-valor='90'] {
 section#seccion-habilidades article.habilidad progress {
   --alturaBarra: 1.5rem;
   display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   width: 100%;
   height: var(--alturaBarra);
@@ -665,14 +680,20 @@ section#seccion-habilidades article.habilidad progress {
   background-color: white;
 }
 
-section#seccion-habilidades article.habilidad progress::-moz-progress-value,
-section#seccion-habilidades article.habilidad progress::-webkit-progress-value {
+section#seccion-habilidades article.habilidad progress::-moz-progress-value {
   background-color: white;
 }
 
-section#seccion-habilidades article.habilidad progress::-moz-progress-bar,
-section#seccion-habilidades article.habilidad progress::-webkit-progress-bar {
+section#seccion-habilidades article.habilidad progress::-webkit-progress-value {
   background-color: var(--colorPrimario);
+}
+
+section#seccion-habilidades article.habilidad progress::-moz-progress-bar {
+  background-color: var(--colorPrimario);
+}
+
+section#seccion-habilidades article.habilidad progress::-webkit-progress-bar {
+  background-color: white;
 }
 
 /* 
@@ -705,6 +726,8 @@ SECCIÓN: LÍNEA TIEMPO
 section#seccion-linea-tiempo div.contenedor-linea-tiempo {
   --numeroEventos: 6;
   width: 100%;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
   max-width: max-content;
   margin: 0px auto;
   padding: 0px 2rem;
@@ -814,7 +837,9 @@ section#seccion-blog article.publicacion div[class|='lado'] {
   height: 100%;
   border-radius: var(--radioRedondeo);
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  visibility: visible;
   transition: transform 2s ease-in-out;
 }
 
@@ -874,6 +899,7 @@ section#seccion-blog article.publicacion div.cuerpo-publicacion p {
 section#seccion-blog article.publicacion footer {
   display: grid;
   margin-top: 2.5rem;
+  grid-template-columns: repeat(2, -webkit-max-content);
   grid-template-columns: repeat(2, max-content);
   justify-content: space-between;
   align-items: end;
